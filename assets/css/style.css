@@ -935,6 +935,11 @@
         z-index: 9999;
     }
     
+    .dis {
+        text-decoration: line-through;
+        margin-right: 10px;
+    }
+    
     .back,
     .compare {
         background-color: #2b62c2;
