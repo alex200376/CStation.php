@@ -74,7 +74,7 @@
         </div>
     </header>
     <main id="main" style="margin-top: 30px;">
-    <a class="back" href="product.php">Back</a>
+    <a class="back" href="product.php" style="margin-left: 5%;">Back</a>
         <div class="card-wrapper" style="box-shadow: 12px 4px 73px -15px rgba(99, 99, 99, 0.75);
     -webkit-box-shadow: 12px 4px 73px -15px rgba(99, 99, 99, 0.75);
     -moz-box-shadow: 12px 4px 73px -15px rgba(99, 99, 99, 0.75);">

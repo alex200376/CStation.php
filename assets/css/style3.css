@@ -856,4 +856,7 @@ img {
     .product-content {
         padding-top: 0;
     }
+    .back {
+        float: left;
+    }
 }
