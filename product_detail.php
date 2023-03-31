@@ -74,11 +74,11 @@
         </div>
     </header>
     <main id="main" style="margin-top: 30px;">
-
+    <a class="back" href="product.php" style="margin-left: 10%;margin-bottom:2%">Back</a>
         <div class="card-wrapper" style="box-shadow: 12px 4px 73px -15px rgba(99, 99, 99, 0.75);
     -webkit-box-shadow: 12px 4px 73px -15px rgba(99, 99, 99, 0.75);
     -moz-box-shadow: 12px 4px 73px -15px rgba(99, 99, 99, 0.75);">
-            <a class="back" href="product.php" style=" position: absolute; top: 20px; left: 40px;">Back</a>
+           
             <div class="cardxd">
 
                 <?php

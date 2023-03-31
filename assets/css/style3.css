@@ -858,5 +858,8 @@ img {
     }
     .back {
         float: left;
+        position: relative;
+        top: auto;
+        left: auto;
     }
 }
