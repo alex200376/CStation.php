@@ -117,25 +117,20 @@ Main Components
     .cd-products-comparison-table {
         margin-bottom: 8em;
     }
-
     .cd-products-comparison-table::after {
         /* never visible - this is used in jQuery to check the current MQ */
         content: 'desktop';
     }
-
     .cd-products-comparison-table header {
         padding: 0 5% 40px;
     }
-
     .cd-products-comparison-table h2 {
         font-size: 2.4rem;
     }
-
     .cd-products-comparison-table .reset,
     .cd-products-comparison-table .filter {
         font-size: 1.6rem;
     }
-
     .cd-products-comparison-table .filter {
         padding: .6em 2em;
         margin-left: 1.6em;
@@ -273,7 +268,6 @@ Main Components
     .cd-features-list li {
         font-size: 1.6rem;
     }
-
     .cd-features-list li.rate {
         padding: 22px 0;
     }
@@ -291,7 +285,6 @@ Main Components
 }
 
 @media only screen and (min-width: 1170px) {
-
     .features .cd-features-list li,
     .cd-products-table .features .top-info {
         text-transform: uppercase;
@@ -403,12 +396,10 @@ Main Components
         height: 280px;
         width: 310px;
     }
-
     .cd-products-table .top-info h3 {
         padding-top: 3%;
         font-size: 1.6rem;
     }
-
     .cd-products-table .top-info .check {
         margin-bottom: 1.5em;
     }
@@ -445,11 +436,9 @@ Main Components
     0% {
         -webkit-transform: scale(1);
     }
-
     60% {
         -webkit-transform: scale(1.6);
     }
-
     100% {
         -webkit-transform: scale(1.5);
     }
@@ -459,11 +448,9 @@ Main Components
     0% {
         -moz-transform: scale(1);
     }
-
     60% {
         -moz-transform: scale(1.6);
     }
-
     100% {
         -moz-transform: scale(1.5);
     }
@@ -477,7 +464,6 @@ Main Components
         -o-transform: scale(1);
         transform: scale(1);
     }
-
     60% {
         -webkit-transform: scale(1.6);
         -moz-transform: scale(1.6);
@@ -485,7 +471,6 @@ Main Components
         -o-transform: scale(1.6);
         transform: scale(1.6);
     }
-
     100% {
         -webkit-transform: scale(1.5);
         -moz-transform: scale(1.5);
@@ -501,31 +486,26 @@ Main Components
 }
 
 @media only screen and (min-width: 1170px) {
-
     .cd-products-table.top-fixed .cd-products-columns>li,
     .cd-products-table.top-scrolling .cd-products-columns>li,
     .cd-products-table.top-fixed .features,
     .cd-products-table.top-scrolling .features {
         padding-top: 100px;
     }
-
     .cd-products-table.top-fixed .top-info,
     .cd-products-table.top-scrolling .top-info {
         height: 100px;
         position: fixed;
         top: 0;
     }
-
     .no-cssgradients .cd-products-table.top-fixed .top-info,
     .no-cssgradients .cd-products-table.top-scrolling .top-info {
         border-bottom: 1px solid #e6e6e6;
     }
-
     .cd-products-table.top-fixed .top-info::after,
     .cd-products-table.top-scrolling .top-info::after {
         opacity: 1;
     }
-
     .cd-products-table.top-fixed .top-info h3,
     .cd-products-table.top-scrolling .top-info h3 {
         -webkit-transform: translateY(-300px);
@@ -534,7 +514,6 @@ Main Components
         -o-transform: translateY(-300px);
         transform: translateY(-300px);
     }
-
     .cd-products-table.top-fixed .top-info img,
     .cd-products-table.top-scrolling .top-info img {
         -webkit-transform: translateY(-300px) scale(0.4);
@@ -543,7 +522,6 @@ Main Components
         -o-transform: translateY(-300px) scale(0.4);
         transform: translateY(-300px) scale(0.4);
     }
-
     .cd-products-table.top-scrolling .top-info {
         position: absolute;
         margin-bottom: 20px;
@@ -601,7 +579,6 @@ Main Components
         -o-transform: translateY(100px);
         transform: translateY(100px);
     }
-
     .cd-table-navigation a.prev {
         left: 210px;
         -webkit-transform: translateY(100px) translateX(15px) rotate(180deg);
@@ -610,11 +587,9 @@ Main Components
         -o-transform: translateY(100px) translateX(15px) rotate(180deg);
         transform: translateY(100px) translateX(15px) rotate(180deg);
     }
-
     .top-fixed .cd-table-navigation a {
         position: fixed;
     }
-
     .top-fixed .cd-table-navigation a,
     .top-scrolling .cd-table-navigation a {
         -webkit-transform: translateY(45px);
@@ -623,7 +598,6 @@ Main Components
         -o-transform: translateY(45px);
         transform: translateY(45px);
     }
-
     .top-fixed .cd-table-navigation a.prev,
     .top-scrolling .cd-table-navigation a.prev {
         -webkit-transform: translateY(45px) translateX(15px) rotate(180deg);
@@ -873,13 +847,11 @@ img {
         justify-content: center;
         align-items: center;
     }
-
     .product-imgs {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-
     .product-content {
         padding-top: 0;
     }
