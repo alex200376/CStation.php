@@ -78,9 +78,9 @@
         <div class="card-wrapper" style="box-shadow: 12px 4px 73px -15px rgba(99, 99, 99, 0.75);
     -webkit-box-shadow: 12px 4px 73px -15px rgba(99, 99, 99, 0.75);
     -moz-box-shadow: 12px 4px 73px -15px rgba(99, 99, 99, 0.75);">
-        
+         <a class="back" href="product.php" style="margin-left: 5%;margin-bottom:10px">Back</a>
             <div class="cardxd">
-            <a class="back" href="product.php" style="margin-left: 5%;margin-bottom:10px">Back</a>
+           
                 <?php
                 // Connect to the database
                 $conn = mysqli_connect('localhost', 'root', '', 'product');
