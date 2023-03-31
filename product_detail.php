@@ -54,12 +54,9 @@
                     <li><a class="nav-link scrollto" href="blog.html">Guide</a></li>
                     <li><a class="nav-link scrollto" href="about_us.html">About us</a></li>
                     <li><a class="nav-link scrollto" href="index.html#services">Services</a></li>
-                    <button class="snipcart-customer-signin getstarted scrollto"
-                        style="background-color: rgba(240, 255, 255, 0);"><i class="ri-login-box-line"
-                            style="font-size: 20px;"></i>My account</button>
+                    <button class="snipcart-customer-signin getstarted scrollto" style="background-color: rgba(240, 255, 255, 0);"><i class="ri-login-box-line" style="font-size: 20px;"></i>My account</button>
                     <button class="snipcart-checkout">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                            class="bi bi-cart" viewBox="0 0 16 16">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                             <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1
                         .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5
                         0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61
@@ -77,8 +74,9 @@
         </div>
     </header>
     <main id="main" style="margin-top: 30px;">
-        <div class="card-wrapper">
-            <div class="cardxd">
+        <div class="card-wrapper" style="box-shadow: 12px 4px 73px -15px rgba(99, 99, 99, 0.75);
+    -webkit-box-shadow: 12px 4px 73px -15px rgba(99, 99, 99, 0.75);
+    -moz-box-shadow: 12px 4px 73px -15px rgba(99, 99, 99, 0.75);">
                 <?php
                 // Connect to the database
                 $conn = mysqli_connect('localhost', 'root', '', 'product');
@@ -121,7 +119,7 @@
                 ?>
 
             </div>
-        </div>
+        
 
 
     </main>
@@ -141,8 +139,7 @@
                             <strong>Phone:</strong> +852 3762 6262<br>
                             <strong>Email:</strong> ccdfs@hkuspace.hku.hk<br>
                             <li>
-                                <a
-                                    href="https://docs.google.com/forms/d/e/1FAIpQLScUtwUw1Wk0iIMSkA1GfuUbYXO1dZWQcWLemcd-z3ya3x5U6g/viewform?embedded=true">Feedback</a>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLScUtwUw1Wk0iIMSkA1GfuUbYXO1dZWQcWLemcd-z3ya3x5U6g/viewform?embedded=true">Feedback</a>
                             </li>
                         </p>
                     </div>
@@ -198,8 +195,7 @@
     </footer>
 
     <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/aos/aos.js"></script>
@@ -211,94 +207,94 @@
     <script src="assets/vendor/php-email-form/validate.js"></script>
 
     <script>
-    ! function(e, t, a) {
-        var c = e.head || e.getElementsByTagName("head")[0],
-            n = e.createElement("script");
-        n.async = !0, n.defer = !0, n.type = "text/javascript", n.src = t + "/static/js/widget.js?config=" + JSON
-            .stringify(a), c.appendChild(n)
-    }(document, "https://app.engati.com", {
-        bot_key: "5bfba005c8f2476b",
-        welcome_msg: true,
-        branding_key: "default",
-        server: "https://app.engati.com",
-        e: "p"
-    });
+        ! function(e, t, a) {
+            var c = e.head || e.getElementsByTagName("head")[0],
+                n = e.createElement("script");
+            n.async = !0, n.defer = !0, n.type = "text/javascript", n.src = t + "/static/js/widget.js?config=" + JSON
+                .stringify(a), c.appendChild(n)
+        }(document, "https://app.engati.com", {
+            bot_key: "5bfba005c8f2476b",
+            welcome_msg: true,
+            branding_key: "default",
+            server: "https://app.engati.com",
+            e: "p"
+        });
     </script>
     <!-- Template Main JS File -->
     <script>
-    if (!window.jQuery) document.write('<script src="js/jquery-3.0.0.min.js"><\/script>');
+        if (!window.jQuery) document.write('<script src="js/jquery-3.0.0.min.js"><\/script>');
 
 
-    window.SnipcartSettings = {
-        publicApiKey: "NTM3NDYyOTAtYjMxOC00YTU4LThmYTQtZjMwZDhlNGU4OTU1NjM4MTM1Mjk2OTg0MjU2NjY5",
-        loadStrategy: "on-user-interaction",
-        addProductBehavior: "none",
-    };
+        window.SnipcartSettings = {
+            publicApiKey: "NTM3NDYyOTAtYjMxOC00YTU4LThmYTQtZjMwZDhlNGU4OTU1NjM4MTM1Mjk2OTg0MjU2NjY5",
+            loadStrategy: "on-user-interaction",
+            addProductBehavior: "none",
+        };
 
-    (() => {
-        var c, d;
-        (d = (c = window.SnipcartSettings).version) != null || (c.version = "3.0");
-        var s, S;
-        (S = (s = window.SnipcartSettings).timeoutDuration) != null || (s.timeoutDuration = 2750);
-        var l, p;
-        (p = (l = window.SnipcartSettings).domain) != null || (l.domain = "cdn.snipcart.com");
-        var w, u;
-        (u = (w = window.SnipcartSettings).protocol) != null || (w.protocol = "https");
-        var f = window.SnipcartSettings.version.includes("v3.0.0-ci") || window.SnipcartSettings.version != "3.0" &&
-            window.SnipcartSettings.version.localeCompare("3.4.0", void 0, {
-                numeric: !0,
-                sensitivity: "base"
-            }) === -1,
-            m = ["focus", "mouseover", "touchmove", "scroll", "keydown"];
-        window.LoadSnipcart = o;
-        document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", r) : r();
+        (() => {
+            var c, d;
+            (d = (c = window.SnipcartSettings).version) != null || (c.version = "3.0");
+            var s, S;
+            (S = (s = window.SnipcartSettings).timeoutDuration) != null || (s.timeoutDuration = 2750);
+            var l, p;
+            (p = (l = window.SnipcartSettings).domain) != null || (l.domain = "cdn.snipcart.com");
+            var w, u;
+            (u = (w = window.SnipcartSettings).protocol) != null || (w.protocol = "https");
+            var f = window.SnipcartSettings.version.includes("v3.0.0-ci") || window.SnipcartSettings.version != "3.0" &&
+                window.SnipcartSettings.version.localeCompare("3.4.0", void 0, {
+                    numeric: !0,
+                    sensitivity: "base"
+                }) === -1,
+                m = ["focus", "mouseover", "touchmove", "scroll", "keydown"];
+            window.LoadSnipcart = o;
+            document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", r) : r();
 
-        function r() {
-            window.SnipcartSettings.loadStrategy ? window.SnipcartSettings.loadStrategy === "on-user-interaction" &&
-                (m.forEach(t => document.addEventListener(t, o)), setTimeout(o, window.SnipcartSettings
-                    .timeoutDuration)) : o()
-        }
-        var a = !1;
-
-        function o() {
-            if (a) return;
-            a = !0;
-            let t = document.getElementsByTagName("head")[0],
-                e = document.querySelector("#snipcart"),
-                i = document.querySelector(
-                    `src[src^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][src$="snipcart.js"]`
-                    ),
-                n = document.querySelector(
-                    `link[href^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][href$="snipcart.css"]`
-                    );
-            e || (e = document.createElement("div"), e.id = "snipcart", e.setAttribute("hidden", "true"), document
-                .body.appendChild(e)), v(e), i || (i = document.createElement("script"), i.src =
-                `${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.js`,
-                i.async = !0, t.appendChild(i)), n || (n = document.createElement("link"), n.rel = "stylesheet",
-                n.type = "text/css", n.href =
-                `${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.css`,
-                t.prepend(n)), m.forEach(g => document.removeEventListener(g, o))
-        }
-
-        function v(t) {
-            !f || (t.dataset.apiKey = window.SnipcartSettings.publicApiKey, window.SnipcartSettings
-                .addProductBehavior && (t.dataset.configAddProductBehavior = window.SnipcartSettings
-                    .addProductBehavior), window.SnipcartSettings.modalStyle && (t.dataset.configModalStyle =
-                    window.SnipcartSettings.modalStyle), window.SnipcartSettings.currency && (t.dataset
-                    .currency = window.SnipcartSettings.currency), window.SnipcartSettings.templatesUrl && (t
-                    .dataset.templatesUrl = window.SnipcartSettings.templatesUrl))
-        }
-    })();
-    document.addEventListener('snipcart.ready', function() {
-        Snipcart.api.session.setLanguage('en', {
-            "payment": {
-                "form": {
-                    "deferred_payment_title": "Pay at delivery",
-                    "deferred_payment_instructions": "Payment will be made with a credit card at the delivery of your order."
-                }
+            function r() {
+                window.SnipcartSettings.loadStrategy ? window.SnipcartSettings.loadStrategy === "on-user-interaction" &&
+                    (m.forEach(t => document.addEventListener(t, o)), setTimeout(o, window.SnipcartSettings
+                        .timeoutDuration)) : o()
             }
+            var a = !1;
+
+            function o() {
+                if (a) return;
+                a = !0;
+                let t = document.getElementsByTagName("head")[0],
+                    e = document.querySelector("#snipcart"),
+                    i = document.querySelector(
+                        `src[src^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][src$="snipcart.js"]`
+                    ),
+                    n = document.querySelector(
+                        `link[href^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][href$="snipcart.css"]`
+                    );
+                e || (e = document.createElement("div"), e.id = "snipcart", e.setAttribute("hidden", "true"), document
+                    .body.appendChild(e)), v(e), i || (i = document.createElement("script"), i.src =
+                    `${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.js`,
+                    i.async = !0, t.appendChild(i)), n || (n = document.createElement("link"), n.rel = "stylesheet",
+                    n.type = "text/css", n.href =
+                    `${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.css`,
+                    t.prepend(n)), m.forEach(g => document.removeEventListener(g, o))
+            }
+
+            function v(t) {
+                !f || (t.dataset.apiKey = window.SnipcartSettings.publicApiKey, window.SnipcartSettings
+                    .addProductBehavior && (t.dataset.configAddProductBehavior = window.SnipcartSettings
+                        .addProductBehavior), window.SnipcartSettings.modalStyle && (t.dataset.configModalStyle =
+                        window.SnipcartSettings.modalStyle), window.SnipcartSettings.currency && (t.dataset
+                        .currency = window.SnipcartSettings.currency), window.SnipcartSettings.templatesUrl && (t
+                        .dataset.templatesUrl = window.SnipcartSettings.templatesUrl))
+            }
+        })();
+        document.addEventListener('snipcart.ready', function() {
+            Snipcart.api.session.setLanguage('en', {
+                "payment": {
+                    "form": {
+                        "deferred_payment_title": "Pay at delivery",
+                        "deferred_payment_instructions": "Payment will be made with a credit card at the delivery of your order."
+                    }
+                }
+            });
         });
-    });
     </script>
     <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
 
