@@ -260,7 +260,7 @@
 							<label class="checkbox-label" for="checkbox5">MSI</label>
 						</li>
 						<li>
-							<input class="filter" data-filter=".ASRock" type="checkbox" id="checkbox6">
+							<input class="filter" data-filter=".ASROCK" type="checkbox" id="checkbox6">
 							<label class="checkbox-label" for="checkbox6">ASRock</label>
 						</li>
 

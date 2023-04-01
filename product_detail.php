@@ -27,7 +27,29 @@
 
     <title>Pre built PC Comparison Table</title>
 </head>
-
+<style>
+.snipcart-add-item {
+		background: linear-gradient(to right, #196BCA, #6433E0);
+		background-color: #196BCA;
+		color: #fff;
+		font-family: Tahoma;
+		font-size: 13px;
+		font-weight: 800;
+		font-style: normal;
+		text-decoration: none;
+		padding: 5px 12px;
+		border: 0px solid #000;
+		border-radius: 21px;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		margin: 5px;
+        width:30%;
+	}
+.product-imgs{
+    margin-right: 30px;
+}
+</style>
 <body>
     <section id="hero" class="d-flex align-items-center" style="height:50px">
 
@@ -74,13 +96,13 @@
         </div>
     </header>
     <main id="main" style="margin-top: 30px;">
-    <a class="back" href="product.php" style="margin-left: 10%;margin-bottom:2%">Back</a>
+    <a class="back" href="product.php" style="margin-right: 5%;margin-bottom:2%;">Back</a>
         <div class="card-wrapper" style="box-shadow: 12px 4px 73px -15px rgba(99, 99, 99, 0.75);
     -webkit-box-shadow: 12px 4px 73px -15px rgba(99, 99, 99, 0.75);
     -moz-box-shadow: 12px 4px 73px -15px rgba(99, 99, 99, 0.75);">
-           
+      
             <div class="cardxd">
-
+           
                 <?php
                 // Connect to the database
                 $conn = mysqli_connect('localhost', 'root', '', 'product');
