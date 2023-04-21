@@ -187,7 +187,7 @@
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="FAQ.html#deliver">Delivery service</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="TAC.html#term">Terms of service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="TAC.html#privacypolicy2">Privacy policy</a>
+                            <li><i class="bx bx-chevron-right"></i> <a href="about_us.html#privacypolicy2">Privacy policy</a>
                             </li>
                             <li><i class="bx bx-chevron-right"></i> <a href="pc_create.html">PC customization</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="FAQ.html">FAQ</a></li>
