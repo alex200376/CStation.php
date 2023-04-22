@@ -25,7 +25,9 @@
     <!-- Modernizr -->
     <link href="assets/css/style.css" rel="stylesheet">
 
-    <title>Pre built PC Comparison Table</title>
+    <title>
+    Product detail
+    </title>
 </head>
 <style>
 .snipcart-add-item {
@@ -48,6 +50,38 @@
 	}
 .product-imgs{
     margin-right: 30px;
+}
+/* Tooltip container */
+/* Tooltip 容器 */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    opacity: 1;
+}
+ 
+/* Tooltip 文本 */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+ 
+    /* 定位 */
+    position: absolute;
+    z-index: 1;
+    opacity: 0.8;
+}
+ 
+/* 鼠标移动上去后显示提示框 */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+i{
+    font-size: 30px;
 }
 </style>
 <body>
@@ -102,7 +136,7 @@
     -moz-box-shadow: 12px 4px 73px -15px rgba(99, 99, 99, 0.75);">
       
             <div class="cardxd">
-           
+            
                 <?php
                 // Connect to the database
                 $conn = mysqli_connect('localhost', 'root', '', 'product');
@@ -122,12 +156,12 @@
                 // Display product information
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                        echo " <div class='product-imgs'><div class='img-display'><div class='img-showcase'><img src='" . $row['product_image'] . "' alt='" . $row['product_name'] . "'></div>";
+                        echo "<div class='product-imgs'><div class='img-display'><div class='img-showcase'><img src='" . $row['product_image'] . "' alt='" . $row['product_name'] . "'></div>";
                         echo "</div>";
                         echo "</div>";
                         echo "</div>";
                         echo "<div class='product-content'>";
-                        echo "<h2 class='product-title'>" . $row['product_name'] . "</h2>";
+                        echo "<h2 class='product-title'>" . $row['product_name'] . "<div class='tooltip'><i class='bi-question'></i><span class='tooltiptext'>Click here to know more</span></div></h2>";
                         echo "<p class='product-detail'>" . $row['product_description'] . "</p>";
                         echo " <div class='product-price'><p class='new-price'>Price: $" . $row['product_price'] . "</p>";
                         echo "</div>";
@@ -143,9 +177,12 @@
                 // Close the database connection
                 mysqli_close($conn);
                 ?>
-            
+               
             </div>
+    
             <div id="disqus_thread" style="margin-top: 30px;"></div>
+            
+
         </div>
 
 
@@ -187,7 +224,7 @@
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="FAQ.html#deliver">Delivery service</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="TAC.html#term">Terms of service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="about_us.html#privacypolicy2">Privacy policy</a>
+                            <li><i class="bx bx-chevron-right"></i> <a href="TAC.html#privacypolicy2">Privacy policy</a>
                             </li>
                             <li><i class="bx bx-chevron-right"></i> <a href="pc_create.html">PC customization</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="FAQ.html">FAQ</a></li>
@@ -345,6 +382,14 @@
 </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script id="dsq-count-scr" src="//cstation-1.disqus.com/count.js" async></script>
+    <script> 
+(function() { // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+var d = document, s = d.createElement('script'); // IMPORTANT: Replace EXAMPLE with your forum shortname!
+s.src = 'https://cstation-1.disqus.com/recommendations.js'; s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+
 </body>
 
 </html>
