@@ -57,6 +57,7 @@
     position: relative;
     display: inline-block;
     opacity: 1;
+    
 }
  
 /* Tooltip 文本 */
@@ -73,6 +74,7 @@
     position: absolute;
     z-index: 1;
     opacity: 0.8;
+    border-bottom: dotted black solid 1px;
 }
  
 /* 鼠标移动上去后显示提示框 */

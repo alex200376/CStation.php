@@ -95,8 +95,31 @@
 	.snipcart-add-item:active {
 		transform: scale(0.95);
 	}
-	.mix{
-	margin: 2%;
+
+	.mix {
+		margin: 2%;
+	}
+
+	.bxl {
+		font-family: Roboto, sans-serif;
+		background-color: #fff;
+		color: #000;
+		border-radius: 5px;
+		padding: 10px 20px;
+		border: 2px solid #196BCA;
+		cursor: pointer;
+		margin: 10px;
+		transition: all 0.3s ease;
+		max-width: 170px;
+		font-size: 13px;
+		text-align: center;
+		font-weight: bolder;
+	}
+
+	.bxl:hover {
+		background-color: #0069d9;
+		color: #fff;
+		border-color: #0069d9;
 	}
 </style>
 
@@ -151,6 +174,7 @@
 				<div class="cd-filter-content" style="display: inline-flexbox;text-align: center;margin-left:60px;">
 
 					<i class="bi-search"></i> <input type="search" placeholder="Try intel... " style="border: gray 2px;height: 40px;background-color: azure;margin: 5px;min-width: 200px;border-radius: 10px;">
+
 				</div>
 			</ul>
 			<!-- cd-filters -->
@@ -160,7 +184,7 @@
 		</div>
 		<!-- cd-tab-filter-wrapper -->
 		<section class="cd-gallery products">
-			<ul>
+			<ul class="products1" id="product-container">
 
 				<?php
 				// Connect to the database
@@ -179,7 +203,7 @@
 				if (mysqli_num_rows($result) > 0) {
 					while ($row = mysqli_fetch_assoc($result)) {
 
-						echo "<li class='mix " . $row['product_cat'] . " " . $row['product_name'] . "' id='cart_item'>";
+						echo "<li class='mix " . $row['product_cat'] . " " . $row['product_name'] . "' id='cart_item' data-price=" . $row['product_price'] . ">";
 						echo "<a href='product_detail.php?id=" . $row['product_id'] . "'><img src='" . $row['product_image'] . "' alt='" . $row['product_name'] . "'></a>";
 						echo "<div>" . $row['product_name'] . "</div>";
 						echo "<div class='price'>$";
@@ -193,6 +217,7 @@
 
 				mysqli_close($conn);
 				?>
+
 				<li class="gap"></li>
 				<li class="gap"></li>
 				<li class="gap"></li>
@@ -270,8 +295,14 @@
 					<!-- cd-filter-content -->
 				</div>
 				<!-- cd-filter-block -->
-
-
+				<div class="cd-filter-block">
+					<h4>Sort by Price</h4>
+					<ul class="cd-filter-content cd-filters list">
+						<button type="button" onclick="sortListItems()" class="bxl">Price: Low to High</button>
+						<button type="button" onclick="sortdListItems()" class="bxl">Price: High to low</button>
+						<button type="button" onclick="sortrListItems()" class="bxl">default</button>
+					</ul>
+				</div>
 			</form>
 
 			<a href="#0" class="cd-close ">Close</a>
@@ -361,7 +392,7 @@
 	<script src="assets/js/script.js"></script>
 	<!-- Template Main JS File -->
 	<script src="assets/js/main1.js"></script>
-	
+
 	<script>
 		const buttons = document.querySelectorAll('.dropdown-item');
 		const boxes = document.querySelectorAll('.box');
@@ -413,7 +444,6 @@
 		});
 
 
-
 		function setActiveBtn(e) {
 			buttons.forEach((button) => {
 				button.classList.remove('btn-clicked');
@@ -421,6 +451,66 @@
 			e.target.classList.add('btn-clicked');
 		}
 
+		function sortListItems() {
+			var productList = document.querySelector('#product-container');
+			var productItems = Array.from(productList.querySelectorAll('li.mix'));
+
+			productItems.sort(function(a, b) {
+				var priceA = parseFloat(a.getAttribute('data-price'));
+				var priceB = parseFloat(b.getAttribute('data-price'));
+				return priceA - priceB;
+			});
+
+			productItems.forEach(function(item) {
+				productList.appendChild(item);
+			});
+			var tempContainer = document.createElement('div');
+			productItems.forEach(function(item) {
+				tempContainer.appendChild(item);
+			});
+
+			productList.innerHTML = '';
+			productList.appendChild(tempContainer);
+		}
+
+		function sortdListItems() {
+			var productList = document.querySelector('#product-container');
+			var productItems = Array.from(productList.querySelectorAll('li.mix'));
+
+			productItems.sort(function(a, b) {
+				var priceA = parseFloat(a.getAttribute('data-price'));
+				var priceB = parseFloat(b.getAttribute('data-price'));
+				return priceB - priceA;
+			});
+
+			productItems.forEach(function(item) {
+				productList.appendChild(item);
+			});
+			var tempContainer = document.createElement('div');
+			productItems.forEach(function(item) {
+				tempContainer.appendChild(item);
+			});
+
+			productList.innerHTML = '';
+			productList.appendChild(tempContainer);
+		}
+
+		function sortrListItems() {
+			var productList = document.querySelector('#product-container');
+			var productItems = Array.from(productList.querySelectorAll('li.mix'));
+
+			productItems.sort(function(a, b) {
+				return 0.5 - Math.random();
+			});
+
+			var tempContainer = document.createElement('div');
+			productItems.forEach(function(item) {
+				tempContainer.appendChild(item);
+			});
+
+			productList.innerHTML = '';
+			productList.appendChild(tempContainer);
+		}
 
 
 		function openNav() {
@@ -498,5 +588,6 @@
 		}
 	})();
 </script>
+<script src="https://cdn.jsdelivr.net/npm/mixitup@3.3.1/dist/mixitup.min.js"></script>
 
 </html>
