@@ -51,17 +51,17 @@
 .product-imgs{
     margin-right: 30px;
 }
-/* Tooltip container */
-/* Tooltip 容器 */
-.tooltip {
+/* tooptipx container */
+/* tooptipx 容器 */
+.tooptipx {
     position: relative;
     display: inline-block;
     opacity: 1;
     
 }
  
-/* Tooltip 文本 */
-.tooltip .tooltiptext {
+/* tooptipx 文本 */
+.tooptipx .tooptipxtext {
     visibility: hidden;
     width: 120px;
     background-color: black;
@@ -72,18 +72,19 @@
  
     /* 定位 */
     position: absolute;
-    z-index: 1;
     opacity: 0.8;
     border-bottom: dotted black solid 1px;
 }
  
 /* 鼠标移动上去后显示提示框 */
-.tooltip:hover .tooltiptext {
+.tooptipx:hover .tooptipxtext {
     visibility: visible;
+    font-size: 10%;
 }
 
-i{
+.tooptipx>i{
     font-size: 30px;
+    z-index:1 ;
 }
 </style>
 <body>
@@ -163,7 +164,7 @@ i{
                         echo "</div>";
                         echo "</div>";
                         echo "<div class='product-content'>";
-                        echo "<h2 class='product-title'>" . $row['product_name'] . "<div class='tooltip'><i class='bi-question'></i><span class='tooltiptext'>Click here to know more</span></div></h2>";
+                        echo "<h2 class='product-title'>" . $row['product_name'] . "<div class='tooptipx'><i class='bi-question'></i><span class='tooptipxtext'>Click here to know more</span></div></h2>";
                         echo "<p class='product-detail'>" . $row['product_description'] . "</p>";
                         echo " <div class='product-price'><p class='new-price'>Price: $" . $row['product_price'] . "</p>";
                         echo "</div>";

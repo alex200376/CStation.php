@@ -28,10 +28,63 @@
 	<link href="assets/css/style1.css" rel="stylesheet">
 	<!-- Resource style -->
 	<script src="assets/js/modernizr.js"></script>
+
 	<title>Products</title>
 </head>
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+
+
+
+	.range-bar-container {
+		width: 80%;
+		margin: 20px auto;
+	}
+
+	input[type="range"] {
+		-webkit-appearance: none;
+		width: 100%;
+		height: 5px;
+		border-radius: 5px;
+		background: linear-gradient(to right, #00c4ff, #7d2ae8);
+		outline: none;
+		opacity: 0.7;
+		-webkit-transition: opacity .2s;
+		transition: opacity .2s;
+	}
+
+	input[type="range"]::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background: #fff;
+		cursor: pointer;
+		border: 3px solid #7d2ae8;
+	}
+
+	input[type="range"]::-moz-range-thumb {
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background: #fff;
+		cursor: pointer;
+		border: 3px solid #7d2ae8;
+	}
+
+	.range-bar-values {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 10px;
+	}
+
+	.range-bar-min-value,
+	.range-bar-max-value {
+		font-size: 14px;
+		font-weight: bold;
+		color: #7d2ae8;
+	}
 
 	.snipcart-checkout {
 		font-family: Roboto, sans-serif;
@@ -98,6 +151,8 @@
 
 	.mix {
 		margin: 2%;
+		animation: slide 1s ease-in-out;
+
 	}
 
 	.bxl {
@@ -120,6 +175,17 @@
 		background-color: #0069d9;
 		color: #fff;
 		border-color: #0069d9;
+	}
+
+
+	@keyframes slide {
+		from {
+			transform: translateY(0);
+		}
+
+		to {
+			transform: translateY(30px);
+		}
 	}
 </style>
 
@@ -295,6 +361,20 @@
 					<!-- cd-filter-content -->
 				</div>
 				<!-- cd-filter-block -->
+
+				<div class="cd-filter-block">
+					<h4>Price Range</h4>
+					<ul class="cd-filter-content">
+						<div class="range-bar-container">
+							<input type="range" id="min-price" name="min-price" min="100" max="55000" value="0">
+							<input type="range" id="max-price" name="max-price" min="100" max="55000" value="55000">
+							<div class="range-bar-values">
+								<span class="range-bar-min-value">$0</span>
+								<span class="range-bar-max-value">$55000</span>
+							</div>
+						</div>
+					</ul>
+				</div>
 				<div class="cd-filter-block">
 					<h4>Sort by Price</h4>
 					<ul class="cd-filter-content cd-filters list">
@@ -394,6 +474,49 @@
 	<script src="assets/js/main1.js"></script>
 
 	<script>
+		// Get the "min-price" and "max-price" inputs
+		const minPriceInput = document.getElementById('min-price');
+		const maxPriceInput = document.getElementById('max-price');
+		const minPriceValue = document.querySelector('.range-bar-min-value');
+		const maxPriceValue = document.querySelector('.range-bar-max-value');
+		// Add an event listener to both inputs
+		minPriceInput.addEventListener('change', filterProductsByPrice);
+		maxPriceInput.addEventListener('change', filterProductsByPrice);
+		minPriceInput.addEventListener('input', updateRangeBar);
+		maxPriceInput.addEventListener('input', updateRangeBar);
+		let filterTimeout;
+
+		function updateRangeBar() {
+			const minPrice = parseInt(minPriceInput.value);
+			const maxPrice = parseInt(maxPriceInput.value);
+			minPriceValue.textContent = '$' + minPrice;
+			maxPriceValue.textContent = '$' + maxPrice;
+			clearTimeout(filterTimeout);
+			filterTimeout = setTimeout(() => {
+				filterProductsByPrice(minPrice, maxPrice);
+			}, 200);
+			filterProductsByPrice(minPrice, maxPrice);
+		}
+		
+		
+
+		function filterProductsByPrice() {
+			// Get the current values of the "min-price" and "max-price" inputs
+			const minPrice = parseFloat(minPriceInput.value);
+			const maxPrice = parseFloat(maxPriceInput.value);
+
+			// Loop through the list of products and hide/show them based on the selected price range
+			const products = document.querySelectorAll('.products1 li');
+			for (let i = 0; i < products.length; i++) {
+				const product = products[i];
+				const price = parseFloat(product.getAttribute('data-price'));
+				if (price >= minPrice && price <= maxPrice) {
+					product.style.display = 'inline-block';
+				} else {
+					product.style.display = 'none';
+				}
+			}
+		}
 		const buttons = document.querySelectorAll('.dropdown-item');
 		const boxes = document.querySelectorAll('.box');
 		const searchBox = document.querySelector("#search ");
@@ -541,6 +664,7 @@
 			e: "p"
 		});
 	</script>
+
 </body>
 <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
 <script>
