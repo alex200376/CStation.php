@@ -357,7 +357,7 @@
 					<h4>Price Range</h4>
 					<ul class="cd-filter-content">
 						<div class="range-bar-container">
-							<input type="range" id="min-price" name="min-price" min="100" max="55000" value="0">
+							<input type="range" id="min-price" name="min-price" min="100" max="55000" value="100">
 							<input type="range" id="max-price" name="max-price" min="100" max="55000" value="55000">
 							<div class="range-bar-values">
 								<span class="range-bar-min-value">$0</span>
@@ -504,6 +504,13 @@
 					product.style.display = 'none';
 				}
 			}
+			var tempContainer = document.createElement('div');
+			productItems.forEach(function(item) {
+				tempContainer.appendChild(item);
+			});
+
+			productList.innerHTML = '';
+			productList.appendChild(tempContainer);
 		}
 		const buttons = document.querySelectorAll('.dropdown-item');
 		const boxes = document.querySelectorAll('.box');
