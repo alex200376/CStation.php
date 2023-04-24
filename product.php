@@ -473,7 +473,8 @@
 		maxPriceInput.addEventListener('change', filterProductsByPrice);
 		minPriceInput.addEventListener('input', updateRangeBar);
 		maxPriceInput.addEventListener('input', updateRangeBar);
-		const products = Array.from(document.querySelectorAll('.products1 li'));
+
+		const products = document.querySelectorAll('.products1 li'));
 
 
 		function updateRangeBar() {
