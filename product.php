@@ -484,17 +484,14 @@
 		maxPriceInput.addEventListener('change', filterProductsByPrice);
 		minPriceInput.addEventListener('input', updateRangeBar);
 		maxPriceInput.addEventListener('input', updateRangeBar);
-		let filterTimeout;
+		
 
 		function updateRangeBar() {
 			const minPrice = parseInt(minPriceInput.value);
 			const maxPrice = parseInt(maxPriceInput.value);
 			minPriceValue.textContent = '$' + minPrice;
 			maxPriceValue.textContent = '$' + maxPrice;
-			clearTimeout(filterTimeout);
-			filterTimeout = setTimeout(() => {
-				filterProductsByPrice(minPrice, maxPrice);
-			}, 200);
+			
 			filterProductsByPrice(minPrice, maxPrice);
 		}
 		
