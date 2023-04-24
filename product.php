@@ -478,7 +478,7 @@
 		let currentMinPrice = minPrice;
 		let targetMinPrice = parseFloat(maxPriceInput.value) - 1;
 		const interval = setInterval(() => {
-			currentMinPrice += 10000;
+			currentMinPrice += 1000;
 			if (currentMinPrice >= targetMinPrice) {
 				clearInterval(interval);
 				minPriceInput.value = 100;
@@ -487,11 +487,19 @@
 			} else {
 				minPriceInput.value = currentMinPrice;
 				minPriceValue.textContent = '$' + currentMinPrice;
-				filterProductsByPrice();
 			}
 		}, 10);
-		minPriceInput.addEventListener('input', filterProductsByPrice);
-		maxPriceInput.addEventListener('input', filterProductsByPrice);
+
+		minPriceInput.addEventListener('input', function(event) {
+			if (event.isTrusted) {
+				filterProductsByPrice();
+			}
+		});
+		maxPriceInput.addEventListener('input', function(event) {
+			if (event.isTrusted) {
+				filterProductsByPrice();
+			}
+		});
 
 		function filterProductsByPrice() {
 			const minPrice = parseFloat(minPriceInput.value);
