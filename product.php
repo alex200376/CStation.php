@@ -355,7 +355,7 @@
 					<h4>Price Range</h4>
 					<ul class="cd-filter-content">
 						<div class="range-bar-container">
-							<input type="range" id="min-price" name="min-price" min="100" max="55000" value="100">
+							<input type="range" id="min-price" name="min-price" min="100" max="40000" value="100">
 							<input type="range" id="max-price" name="max-price" min="100" max="55000" value="55000">
 							<div class="range-bar-values">
 								<span class="range-bar-min-value">$0</span>
@@ -463,38 +463,40 @@
 	<script src="assets/js/main1.js"></script>
 
 	<script>
-		// Get the "min-price" and "max-price" inputs
 		const minPriceInput = document.getElementById('min-price');
 		const maxPriceInput = document.getElementById('max-price');
 		const minPriceValue = document.querySelector('.range-bar-min-value');
 		const maxPriceValue = document.querySelector('.range-bar-max-value');
-		// Add an event listener to both inputs
-		minPriceInput.addEventListener('change', filterProductsByPrice);
-		maxPriceInput.addEventListener('change', filterProductsByPrice);
-		minPriceInput.addEventListener('input', updateRangeBar);
-		maxPriceInput.addEventListener('input', updateRangeBar);
+		const products = document.querySelectorAll('.products1 li');
 
-		const products = document.querySelectorAll('.products1 li'));
+		// Set the initial value of the min price input to the lowest price available
+		const minPrice = parseFloat(products[0].getAttribute('data-price'));
+		minPriceInput.value = minPrice;
+		minPriceValue.textContent = '$' + minPrice;
 
-
-		function updateRangeBar() {
-			const minPrice = parseInt(minPriceInput.value);
-			const maxPrice = parseInt(maxPriceInput.value);
-			minPriceValue.textContent = '$' + minPrice;
-			maxPriceValue.textContent = '$' + maxPrice;
-
-			filterProductsByPrice(minPrice, maxPrice);
-		}
-
-
+		// Animate the min price input from low to high
+		let currentMinPrice = minPrice;
+		let targetMinPrice = parseFloat(maxPriceInput.value) - 1;
+		const interval = setInterval(() => {
+			currentMinPrice += 10000;
+			if (currentMinPrice >= targetMinPrice) {
+				clearInterval(interval);
+				minPriceInput.value = 100;
+				minPriceValue.textContent = '$' + 100;
+				filterProductsByPrice();
+			} else {
+				minPriceInput.value = currentMinPrice;
+				minPriceValue.textContent = '$' + currentMinPrice;
+				filterProductsByPrice();
+			}
+		}, 10);
+		minPriceInput.addEventListener('input', filterProductsByPrice);
+		maxPriceInput.addEventListener('input', filterProductsByPrice);
 
 		function filterProductsByPrice() {
-			// Get the current values of the "min-price" and "max-price" inputs
 			const minPrice = parseFloat(minPriceInput.value);
 			const maxPrice = parseFloat(maxPriceInput.value);
 
-			// Loop through the list of products and hide/show them based on the selected price range
-			const products = document.querySelectorAll('.products1 li');
 			for (let i = 0; i < products.length; i++) {
 				const product = products[i];
 				const price = parseFloat(product.getAttribute('data-price'));
@@ -505,7 +507,10 @@
 				}
 			}
 
+			minPriceValue.textContent = '$' + minPrice;
+			maxPriceValue.textContent = '$' + maxPrice;
 		}
+
 		const buttons = document.querySelectorAll('.dropdown-item');
 		const boxes = document.querySelectorAll('.box');
 		const searchBox = document.querySelector("#search ");
