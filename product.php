@@ -151,7 +151,7 @@
 
 	.mix {
 		margin: 2%;
-		animation: slide 1s ease-in-out;
+	
 
 	}
 
@@ -178,15 +178,6 @@
 	}
 
 
-	@keyframes slide {
-		from {
-			transform: translateY(0);
-		}
-
-		to {
-			transform: translateY(30px);
-		}
-	}
 </style>
 
 <body>
