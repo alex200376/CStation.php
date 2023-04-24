@@ -504,13 +504,7 @@
 					product.style.display = 'none';
 				}
 			}
-			var tempContainer = document.createElement('div');
-			productItems.forEach(function(item) {
-				tempContainer.appendChild(item);
-			});
-
-			productList.innerHTML = '';
-			productList.appendChild(tempContainer);
+		
 		}
 		const buttons = document.querySelectorAll('.dropdown-item');
 		const boxes = document.querySelectorAll('.box');
