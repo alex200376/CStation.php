@@ -151,7 +151,7 @@
 
 	.mix {
 		margin: 2%;
-	
+
 
 	}
 
@@ -176,8 +176,6 @@
 		color: #fff;
 		border-color: #0069d9;
 	}
-
-
 </style>
 
 <body>
@@ -475,18 +473,19 @@
 		maxPriceInput.addEventListener('change', filterProductsByPrice);
 		minPriceInput.addEventListener('input', updateRangeBar);
 		maxPriceInput.addEventListener('input', updateRangeBar);
-		
+		const products = Array.from(document.querySelectorAll('.products1 li'));
+
 
 		function updateRangeBar() {
 			const minPrice = parseInt(minPriceInput.value);
 			const maxPrice = parseInt(maxPriceInput.value);
 			minPriceValue.textContent = '$' + minPrice;
 			maxPriceValue.textContent = '$' + maxPrice;
-			
+
 			filterProductsByPrice(minPrice, maxPrice);
 		}
-		
-		
+
+
 
 		function filterProductsByPrice() {
 			// Get the current values of the "min-price" and "max-price" inputs
@@ -504,7 +503,7 @@
 					product.style.display = 'none';
 				}
 			}
-		
+
 		}
 		const buttons = document.querySelectorAll('.dropdown-item');
 		const boxes = document.querySelectorAll('.box');
