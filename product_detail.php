@@ -164,7 +164,7 @@
                         echo "</div>";
                         echo "</div>";
                         echo "<div class='product-content'>";
-                        echo "<h2 class='product-title'>" . $row['product_name'] . "<div class='tooptipx'><i class='bi-question'></i><span class='tooptipxtext'>Click here to know more</span></div></h2>";
+                        echo "<h2 class='product-title'>" . $row['product_name'] . "<div class='tooptipx'><i class='bi-question'></i><span class='tooptipxtext'><a href='blog2.html'>Click here to know more</a></span></div></h2>";
                         echo "<p class='product-detail'>" . $row['product_description'] . "</p>";
                         echo " <div class='product-price'><p class='new-price'>Price: $" . $row['product_price'] . "</p>";
                         echo "</div>";
@@ -176,7 +176,7 @@
                     }
                 } else {
                     echo "No products found.";
-                }
+                } 
                 // Close the database connection
                 mysqli_close($conn);
                 ?>
