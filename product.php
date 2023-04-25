@@ -36,56 +36,6 @@
 
 
 
-	.range-bar-container {
-		width: 80%;
-		margin: 20px auto;
-	}
-
-	input[type="range"] {
-		-webkit-appearance: none;
-		width: 100%;
-		height: 5px;
-		border-radius: 5px;
-		background: linear-gradient(to right, #00c4ff, #7d2ae8);
-		outline: none;
-		opacity: 0.7;
-		-webkit-transition: opacity .2s;
-		transition: opacity .2s;
-	}
-
-	input[type="range"]::-webkit-slider-thumb {
-		-webkit-appearance: none;
-		appearance: none;
-		width: 20px;
-		height: 20px;
-		border-radius: 50%;
-		background: #fff;
-		cursor: pointer;
-		border: 3px solid #7d2ae8;
-	}
-
-	input[type="range"]::-moz-range-thumb {
-		width: 20px;
-		height: 20px;
-		border-radius: 50%;
-		background: #fff;
-		cursor: pointer;
-		border: 3px solid #7d2ae8;
-	}
-
-	.range-bar-values {
-		display: flex;
-		justify-content: space-between;
-		margin-top: 10px;
-	}
-
-	.range-bar-min-value,
-	.range-bar-max-value {
-		font-size: 14px;
-		font-weight: bold;
-		color: #7d2ae8;
-	}
-
 	.snipcart-checkout {
 		font-family: Roboto, sans-serif;
 		font-weight: 0;
@@ -352,19 +302,6 @@
 				<!-- cd-filter-block -->
 
 				<div class="cd-filter-block">
-					<h4>Price Range</h4>
-					<ul class="cd-filter-content">
-						<div class="range-bar-container">
-							<input type="range" id="min-price" name="min-price" min="100" max="40000" value="100">
-							<input type="range" id="max-price" name="max-price" min="100" max="55000" value="55000">
-							<div class="range-bar-values">
-								<span class="range-bar-min-value">$0</span>
-								<span class="range-bar-max-value">$55000</span>
-							</div>
-						</div>
-					</ul>
-				</div>
-				<div class="cd-filter-block">
 					<h4>Sort by Price</h4>
 					<ul class="cd-filter-content cd-filters list">
 						<button type="button" onclick="sortListItems()" class="bxl">Price: Low to High</button>
@@ -463,62 +400,7 @@
 	<script src="assets/js/main1.js"></script>
 
 	<script>
-		const minPriceInput = document.getElementById('min-price');
-		const maxPriceInput = document.getElementById('max-price');
-		const minPriceValue = document.querySelector('.range-bar-min-value');
-		const maxPriceValue = document.querySelector('.range-bar-max-value');
-		const products = document.querySelectorAll('.products1 li');
-
-		// Set the initial value of the min price input to the lowest price available
-		const minPrice = parseFloat(products[0].getAttribute('data-price'));
-		minPriceInput.value = minPrice;
-		minPriceValue.textContent = '$' + minPrice;
-
-		// Animate the min price input from low to high
-		let currentMinPrice = minPrice;
-		let targetMinPrice = parseFloat(maxPriceInput.value) - 1;
-		const interval = setInterval(() => {
-			currentMinPrice += 1000;
-			if (currentMinPrice >= targetMinPrice) {
-				clearInterval(interval);
-				minPriceInput.value = 100;
-				minPriceValue.textContent = '$' + 100;
-				filterProductsByPrice();
-			} else {
-				minPriceInput.value = currentMinPrice;
-				minPriceValue.textContent = '$' + currentMinPrice;
-			}
-		}, 10);
-
-		minPriceInput.addEventListener('input', function(event) {
-			if (event.isTrusted) {
-				filterProductsByPrice();
-			}
-		});
-		maxPriceInput.addEventListener('input', function(event) {
-			if (event.isTrusted) {
-				filterProductsByPrice();
-			}
-		});
-
-		function filterProductsByPrice() {
-			const minPrice = parseFloat(minPriceInput.value);
-			const maxPrice = parseFloat(maxPriceInput.value);
-
-			for (let i = 0; i < products.length; i++) {
-				const product = products[i];
-				const price = parseFloat(product.getAttribute('data-price'));
-				if (price >= minPrice && price <= maxPrice) {
-					product.style.display = 'inline-block';
-				} else {
-					product.style.display = 'none';
-				}
-			}
-
-			minPriceValue.textContent = '$' + minPrice;
-			maxPriceValue.textContent = '$' + maxPrice;
-		}
-
+		
 		const buttons = document.querySelectorAll('.dropdown-item');
 		const boxes = document.querySelectorAll('.box');
 		const searchBox = document.querySelector("#search ");
