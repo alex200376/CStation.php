@@ -1,0 +1,7 @@
+{
+    "name": "your-vendor/your-project",
+    "description": "A brief description of your project",
+    "require": {
+        "php": ">=7.4"
+    }
+}
